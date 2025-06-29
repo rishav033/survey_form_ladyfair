@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/img/lf_logo.png" type="image/png">
+  <title data-en="Ladyfair Training Institute Form" data-hi="लेडीफेयर प्रशिक्षण संस्थान फ़ॉर्म">Ladyfair Training Institute Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  
+   <style>
+    :root {
+      --brand-color: #ff3370;
+      --brand-light: #fff;
+    }
+
+    body {
+      background-color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .topbar {
+      background-color: #ff3370;
+      color: white;
+      padding: 10px 0;
+    }
+    
+    .topbar .topbar-left, .topbar .topbar-right {
+      display: flex;
+      align-items: center;
+    }
+
+    .topbar .topbar-left i, .topbar .topbar-right i {
+      margin-right: 10px;
+    }
+
+    .topbar .topbar-left a, .topbar .topbar-right a {
+      color: white;
+      text-decoration: none;
+      margin-right: 15px;
+      font-size: 16px;
+    }
+ .navbar {
+      background-color: #fff;
+    }
+
+    .navbar-brand,
+    .navbar-nav .nav-link,
+    .navbar .btn {
+      color: var(--brand-color) !important;
+      font-weight: 500;
+    }
+
+    .navbar .btn {
+      background-color: #fff;
+      border: 1px solid var(--brand-color);
+      margin-left: 10px;
+    }
+
+    .navbar .btn:hover {
+      background-color: #ffe6ee;
+    }
+   
+
+    .slider {
+      height: 300px;
+      background: linear-gradient(to right, #ff3370aa, #ff3370cc), url('https://via.placeholder.com/1920x300') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+
+    /* Additional styling for the rest of the page */
+    .form-section h3 {
+      color: var(--brand-color);
+      margin-bottom: 30px;
+    }
+
+    .card {
+      border: 1px solid #ffe0ec;
+      box-shadow: 0 0 10px #ffe0ec;
+    }
+
+    .card-header {
+      background-color: var(--brand-color);
+      color: white;
+      font-weight: 600;
+    }
+
+    .btn-primary {
+      background-color: var(--brand-color);
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #e62d65;
+    }
+
+    .whatsapp-icon {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+    }
+
+    .whatsapp-icon img {
+      height: 55px;
+      width: 55px;
+    }
+
+    footer {
+      background-color: var(--brand-color);
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .slider {
+        height: 200px;
+      }
+    }
+
+    @media (max-width: 450px) {
+      .topbar {
+      background-color: #ff3370;
+      color: white;
+      padding: 10px 0;
+    }
+    
+    .topbar .topbar-left, .topbar .topbar-right {
+      display: flex;
+      align-items: center;
+    }
+
+    .topbar .topbar-left i, .topbar .topbar-right i {
+      margin-right: 10px;
+    }
+
+    .topbar .topbar-left a, .topbar .topbar-right a {
+      color: white;
+      text-decoration: none;
+      margin-right: 9px;
+      font-size: 14px;
+    }
+    }
+    @media (max-width: 375px) {
+      .topbar {
+      background-color: #ff3370;
+      color: white;
+      padding: 8px 0;
+    }
+    
+    .topbar .topbar-left, .topbar .topbar-right {
+      display: flex;
+      align-items: center;
+    }
+
+    .topbar .topbar-left i, .topbar .topbar-right i {
+      margin-right: 8px;
+    }
+
+    .topbar .topbar-left a, .topbar .topbar-right a {
+      color: white;
+      text-decoration: none;
+      margin-right: 7px;
+      font-size: 12px;
+    }
+    }
+    /* Active border color when input is focused */
+input:focus, select:focus, textarea:focus {
+  border-color: var(--brand-color) !important;
+  box-shadow: 0 0 5px var(--brand-color);
+}
+
+/* Styling for input placeholders */
+input::placeholder {
+  color: #999;
+  opacity: 1; /* Make sure the placeholder text is visible */
+}
+/* Zoom-in modal animation */
+.zoom-in {
+  animation: zoomIn 0.3s ease-in-out;
+}
+@keyframes zoomIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Checkmark Animation */
+#modal-icon.success::before {
+  content: "✔";
+  font-size: 40px;
+  color: #28a745;
+  display: inline-block;
+  animation: pop 0.4s ease;
+}
+#modal-icon.error::before {
+  content: "✖";
+  font-size: 40px;
+  color: #dc3545;
+  display: inline-block;
+  animation: pop 0.4s ease;
+}
+@keyframes pop {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Checkbox animation */
+.form-check-input.challenge {
+  transition: all 0.2s ease;
+  accent-color: #ff3370;
+}
+
+
+  </style>
+</head>
+<body>
+ <!-- Topbar -->
+  <div class="topbar">
+    <div class="container d-flex justify-content-between">
+      <div class="topbar-left">
+        <a href="tel:+917004721239">
+          <i class="fa fa-phone"></i>7004721239
+        </a>
+        <a href="mailto:contact@ladyfair.in">
+          <i class="fa fa-envelope"></i> contact@ladyfair.in
+        </a>
+      </div>
+      <div class="topbar-right"><i class="fa fa-language" style="font-size: 22px;" aria-hidden="true"></i>
+        <select id="languageSelect" class="form-select">
+          <option value="en">English</option>
+          <option value="hi">हिंदी</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light shadow-sm px-3">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="img/INS_LOGO.png" alt="Logo" height="40">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse ms-auto" id="navbarNav">
+      <div class="d-lg-flex ms-auto">
+        <a href="https://ladyfair.in" class="btn my-2 my-lg-0">Go to Ladyfair Site <i class="fa fa-external-link" aria-hidden="true"></i></a>
+        <a href="https://institute.ladyfair.in/" class="btn my-2 my-lg-0 ms-2">Go to Ladyfair Institute <i class="fa fa-external-link" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Slider Carousel -->
+<div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="/img/Meet the Artists.png" class="d-block w-100" alt="Slide 1">
+    </div>
+    <div class="carousel-item">
+      <img src="/img/l1.png" class="d-block w-100" alt="Slide 2">
+    </div>
+    <div class="carousel-item">
+      <img src="/img/dsa.png" class="d-block w-100" alt="Slide 3">
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden" data-en="Previous" data-hi="पिछला">Previous</span>
+  </button>
+
+  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden" data-en="Next" data-hi="अगला">Next</span>
+  </button>
+</div>
+
+<!-- Form Section -->
+<div class="container form-section pt-2 mb-0">
+  <h3 class="text-center" data-en="Training Institute Gap Analysis Sheet (Lead Survey Form)" data-hi="ट्रेनिंग इंस्टीट्यूट गैप एनालिसिस">
+    Training Institute Gap Analysis
+  </h3>
+
+  <form method="POST" action="https://script.google.com/macros/s/AKfycbzpkyRHqnShTZbaDJY9PAy96Tizl-9cgU0cT8s4m9-Kr81NMpnbo3cVDhfI8dKhxXiFVg/exec" target="hidden_iframe">
+    <!-- Basic Information -->
+    <div class="card mb-4">
+      <div class="card-header" data-en="Basic Information" data-hi="बेसिक इन्फॉर्मेशन">Basic Information</div>
+      <div class="card-body row g-3">
+        <div class="col-md-6"><label class="form-label" data-en="Institute Name" data-hi="संस्थान का नाम">Institute Name</label><input type="text" class="form-control" name="institute_name" required></div>
+        <div class="col-md-6"><label class="form-label" data-en="Owner Name" data-hi="ओनर का नाम">Owner Name</label><input type="text" class="form-control" name="owner_name" required></div>
+        <div class="col-md-6"><label class="form-label" data-en="Contact Number" data-hi="फ़ोन नंबर">Contact Number</label><input type="text" class="form-control" name="contact_number" required></div>
+        <div class="col-md-6"><label class="form-label" data-en="Email ID" data-hi="ईमेल आईडी">Email ID</label><input type="email" class="form-control" name="email"></div>
+        <div class="col-md-6"><label class="form-label" data-en="WhatsApp Number" data-hi="व्हाट्सएप नंबर">WhatsApp Number</label><input type="text" class="form-control" name="whatsapp_number"></div>
+        <div class="col-md-6"><label class="form-label" data-en="Address" data-hi="पता">Address</label><input type="text" class="form-control" name="address"></div>
+        <div class="col-md-6">
+  <label class="form-label" data-en="District" data-hi="जिला">District</label>
+  <input type="text" class="form-control" name="district" placeholder="">
+</div>
+<div class="col-md-6">
+  <label class="form-label" data-en="Pin Code" data-hi="पिन कोड">Pin Code</label>
+  <input type="text" class="form-control" name="pin_code" placeholder="">
+</div>
+</div>
+    </div>
+
+    <!-- Training Model -->
+    <div class="card mb-4">
+      <div class="card-header" data-en="Training Model" data-hi="प्रशिक्षण मॉडल">Training Model</div>
+      <div class="card-body row g-3">
+        <div class="col-md-6"><label class="form-label" data-en="Total no. of students trained monthly" data-hi="हर महीने कितने स्टूडेंट्स ट्रेन किये जाते हैं?">Total no. of students trained monthly?</label><input type="number" class="form-control" name="students_trained" ></div>
+        <div class="col-md-6"><label class="form-label" data-en="No. of batches per year" data-hi="साल में कितने बैचेस होते हैं?">No. of batches per year</label><input type="number" name="batches_per_year" class="form-control"></div>
+        <div class="col-md-6"><label class="form-label" data-en="Duration of each course" data-hi="हर कोर्स की ड्यूरेशन क्या है?">Duration of each course</label><input type="text" name="course_duration" class="form-control"></div>
+        <div class="col-md-6"><label class="form-label" data-en="Type of courses offered (basic, advanced, bridal etc.)" data-hi="कौनसे टाइप्स के कोर्सेस ऑफर होते हैं? (बेसिक, एडवांस्ड, ब्राइडल, आदि)">Type of courses offered (basic, advanced, bridal etc.)</label><input type="text" class="form-control" name="course_type" ></div>
+        <div class="col-md-6"><label class="form-label" data-en="Course fees (per course)" data-hi="हर कोर्स की फीस कितनी है?">Course fees (per course)</label><input type="text" class="form-control" name="course_fees" ></div>
+        <div class="col-md-6"><label class="form-label" data-en=" Is certification provided? If yes, from whom?" data-hi="क्या सर्टिफिकेशन दिया जाता है? अगर हां, तो किस अथॉरिटी से?"> Is certification provided? If yes, from whom?</label><input type="text" class="form-control" name="certification"></div>
+        <div class="col-md-6"><label class="form-label" data-en="Do you have placement support?" data-hi="क्या आप प्लेसमेंट सपोर्ट देते हैं?">Do you have placement support?</label>
+          <select class="form-select" name="placement_support">
+            <option value=""  data-en="Select" data-hi="चयन करें">Select</option>
+            <option data-en="Yes" data-hi="हाँ">Yes</option>
+            <option data-en="No" data-hi="नहीं">No</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Infrastructure & Branding -->
+    <div class="card mb-4">
+      <div class="card-header" data-en="Infrastructure & Branding" data-hi="इन्फ्रास्ट्रक्चर और ब्रांडिंग">Infrastructure & Branding</div>
+      <div class="card-body row g-3">
+        <div class="col-md-6"><label class="form-label" data-en="How many rooms/training chairs? " data-hi="टोटल कितने रूम्स/ट्रेनिंग चेयर्स हैं?">How many rooms/training chairs? </label><input type="text" class="form-control" name="room_count"></div>
+        <div class="col-md-6"><label class="form-label" data-en="Do you have branding/signage for training? " data-hi="क्या इंस्टिट्यूट के पास प्रॉपर ब्रांडिंग/साइनबोर्ड है?">Do you have branding/signage for training? </label><input type="text" class="form-control" name="branding"></div>
+        <div class="col-md-6"><label class="form-label" data-en="Do you use printed brochures/posters? " data-hi="क्या आप प्रिंटेड ब्रॉशर या पोस्टर्स यूज़ करते हैं?">Do you use printed brochures/posters? </label><input type="text" class="form-control" name="brochures"></div>
+        <div class="col-md-6"><label class="form-label" data-en="Are you using any software for student management? " data-hi="क्या आप स्टूडेंट मैनेजमेंट के लिए कोई सॉफ्टवेयर यूज़ करते हैं?">Are you using any software for student management? </label><input type="text" class="form-control" name="student_management"></div>
+        <div class="col-md-6"><label class="form-label" data-en="Do you have a website or Google listing?" data-hi="क्या आपके पास वेबसाइट या गूगल लिस्टिंग है?">Do you have a website or Google listing?</label><input type="text" class="form-control" name="website_listing"></div>
+      </div>
+    </div>
+
+    <!-- Marketing & Revenue -->
+    <div class="card mb-4">
+      <div class="card-header" data-en="Marketing & Revenue" data-hi="मार्केटिंग और रेवेन्यू">Marketing & Revenue</div>
+      <div class="card-body row g-3">
+        <div class="col-md-6"><label class="form-label" data-en="How do you market your training programs?" data-hi="आप अपने ट्रेनिंग प्रोग्राम्स का प्रमोशन कैसे करते हैं?">How do you market your training programs?</label><input type="text" class="form-control" name="marketing"></div>
+        <div class="col-md-6"><label class="form-label" data-en="Do you face difficulty getting students?" data-hi="क्या आपको स्टूडेंट्स लाने में दिक्कत होती है?">
+          Do you face difficulty getting students?</label>
+          <select class="form-select" name="difficulty_getting_students">
+            <option value="" data-en="Select" data-hi="चयन करें">Select</option>
+            <option data-en="Yes" data-hi="हाँ">Yes</option>
+            <option data-en="No" data-hi="नहीं">No</option>
+          </select>
+        </div>
+        <div class="col-md-6"><label class="form-label" data-en="How much do you spend on marketing monthly?" data-hi="आप महीने में मार्केटिंग पर कितना खर्च करते हैं?">How much do you spend on marketing monthly?</label><input type="text" class="form-control" name="marketing_spent"></div>
+        <div class="col-md-6"><label class="form-label" data-en="What is your average monthly revenue from training?" data-hi="ट्रेनिंग से आपकी एवरेज मंथली इनकम कितनी होती है?">What is your average monthly revenue from training?</label><input type="text" class="form-control" name="average_revenue"></div>
+        <div class="col-md-6"><label class="form-label" data-en="Are you satisfied with your current income from training?" data-hi="क्या आप अपनी करंट ट्रेनिंग इनकम से सैटिस्फाइड हैं?">Are you satisfied with your current income from training?</label>
+          <select class="form-select" name="income_satisfaction">
+            <option value="" data-en="Select" data-hi="चयन करें">Select</option>
+            <option data-en="Yes" data-hi="हाँ">Yes</option>
+            <option data-en="No" data-hi="नहीं">No</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Challenges / Gaps -->
+  <!-- Challenges / Gaps -->
+<div class="card mb-4">
+  <div class="card-header" data-en="Challenges / Gaps (To be filled after visit or call)" data-hi="चैलेंजेस / गैप्स (विज़िट या कॉल के बाद भरा जाये)">Challenges / Gaps (To be filled after visit or call)</div>
+  <div class="card-body">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="selectAll">
+      <label class="form-check-label fw-bold text-danger" for="selectAll" data-en="Select All" data-hi="सभी का चयन करें">Select All</label>
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-6">
+        <div class="form-check">
+          <input class="form-check-input challenge" name="challenges[]" type="checkbox" id="c1" value="Low student flow">
+          <label class="form-check-label" for="c1" data-en="Low student flow" data-hi="लो स्टूडेंट फ्लो">Low student flow</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input challenge" name="challenges[]" type="checkbox" id="c2" value="Poor branding / visibility">
+          <label class="form-check-label" for="c2" data-en="Poor branding / visibility" data-hi="पुअर ब्रांडिंग / विज़िबिलिटी">Poor branding / visibility</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input challenge" name="challenges[]" type="checkbox" id="c3" value="No certification credibility">
+          <label class="form-check-label" for="c3" data-en="No certification credibility" data-hi="नो सर्टिफिकेशन क्रेडिबिलिटी">No certification credibility</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input challenge" name="challenges[]" type="checkbox" id="c4" value="No digital presence">
+          <label class="form-check-label" for="c4" data-en="No digital presence" data-hi="नो डिजिटल प्रेज़ेन्स">No digital presence</label>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-check">
+          <input class="form-check-input challenge" name="challenges[]" type="checkbox" id="c5" value="No placement record">
+          <label class="form-check-label" for="c5" data-en="No placement record" data-hi="नो प्लेसमेंट रिकॉर्ड">No placement record</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input challenge" name="challenges[]" type="checkbox" id="c6" value="Limited marketing">
+          <label class="form-check-label" for="c6" data-en="Limited marketing" data-hi="लिमिटेड मार्केटिंग">Limited marketing</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input challenge" name="challenges[]" type="checkbox" id="c7" value="Manual operations (no system/software)">
+          <label class="form-check-label" for="c7" data-en="Manual operations (no system/software)" data-hi="मैन्युअल ऑपरेशन्स (नो सॉफ्टवेयर/सिस्टम)">Manual operations (no system/software)</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input challenge" name="challenges[]" type="checkbox" id="c8" value="Poor course design or fees mismatch">
+          <label class="form-check-label" for="c8" data-en="Poor course design or fees mismatch" data-hi="पुअर कोर्स डिज़ाइन या फीस मिसमैच">Poor course design or fees mismatch</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Submit -->
+    <div class="text-center mb-4">
+      <button type="submit" class="btn btn-primary btn-lg px-5" data-en="Submit" data-hi="Submit">Submit</button>
+    </div>
+  </form>
+        
+</div>
+<!-- WhatsApp Floating Icon -->
+<div class="whatsapp-icon">
+  <a href="https://wa.me/917004721239" target="_blank">
+    <img src="https://img.icons8.com/color/96/000000/whatsapp.png" alt="WhatsApp">
+  </a>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p  >© 2025 Ladyfair | All Rights Reserved</p>
+</footer>
+
+<!-- Bootstrap JS and Select All Logic -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+ const selectAll = document.getElementById('selectAll');
+const checkboxes = document.querySelectorAll('.challenge');
+
+// Select or deselect all checkboxes when the "Select All" checkbox is toggled
+selectAll.addEventListener('change', () => {
+  checkboxes.forEach(cb => cb.checked = selectAll.checked);
+});
+
+// Update the "Select All" checkbox status based on individual checkbox changes
+checkboxes.forEach(cb => {
+  cb.addEventListener('change', () => {
+    const allChecked = Array.from(checkboxes).every(ch => ch.checked);
+    selectAll.checked = allChecked;
+  });
+});
+
+
+
+  document.getElementById("languageSelect").addEventListener("change", function() {
+    const lang = this.value;
+    document.querySelectorAll("[data-en]").forEach(el => {
+      el.textContent = el.getAttribute(`data-${lang}`);
+    });
+  });
+
+  // This function will be triggered when form is submitted.
+function doPost(e) {
+  const sheet = SpreadsheetApp.openById('1g0Rr7AVY3Y3gu1NXtSa1ee84iBFgO-kfCwMQy8tw3FQ').getSheetByName('Sheet1');
+  const formData = e.parameter;
+
+  const allChallenges = [
+    "Low student flow",
+    "Poor branding / visibility",
+    "No certification credibility",
+    "No digital presence",
+    "No placement record",
+    "Limited marketing",
+    "Manual operations (no system/software)",
+    "Poor course design or fees mismatch"
+  ];
+
+  const headers = [
+    "Timestamp",
+    "Institute Name", "Owner Name", "Contact Number", "Email ID", "WhatsApp Number", "Address",
+    "District", "Pin Code", "Students Trained Monthly", "Batches Per Year", "Course Duration", "Course Type",
+    "Course Fees", "Certification Authority", "Placement Support", "Rooms/Training Chairs", "Branding/Signage Available",
+    "Printed Brochures/Posters", "Student Management Software", "Website/Google Listing", "Marketing Method",
+    "Difficulty Getting Students", "Monthly Marketing Spend", "Average Monthly Revenue", "Income Satisfaction",
+    ...allChallenges
+  ];
+
+  if (sheet.getLastRow() === 0) {
+    sheet.appendRow(headers);
+  }
+
+  let selectedChallenges = [];
+  if (e.parameters['challenges[]']) {
+    selectedChallenges = Array.isArray(e.parameters['challenges[]'])
+      ? e.parameters['challenges[]']
+      : [e.parameters['challenges[]']];
+  }
+
+  const challengeFlags = allChallenges.map(ch =>
+    selectedChallenges.includes(ch) ? "Yes" : "No"
+  );
+
+  // ✅ IST timestamp
+  const timestamp = Utilities.formatDate(new Date(), "Asia/Kolkata", "dd-MM-yyyy HH:mm:ss");
+
+  const row = [
+    timestamp,
+    formData['institute_name'] || '', 
+    formData['owner_name'] || '', 
+    formData['contact_number'] || '', 
+    formData['email'] || '', 
+    formData['whatsapp_number'] || '',
+    formData['address'] || '', 
+    formData['district'] || '', 
+    formData['pin_code'] || '', 
+    formData['students_trained'] || '',
+    formData['batches_per_year'] || '',
+    formData['course_duration'] || '',
+    formData['course_type'] || '',
+    formData['course_fees'] || '',
+    formData['certification'] || '',
+    formData['placement_support'] || '',
+    formData['room_count'] || '',
+    formData['branding'] || '',
+    formData['brochures'] || '',
+    formData['student_management'] || '',
+    formData['website_listing'] || '',
+    formData['marketing'] || '',
+    formData['difficulty_getting_students'] || '',
+    formData['marketing_spent'] || '',
+    formData['average_revenue'] || '',
+    formData['income_satisfaction'] || '',
+    ...challengeFlags
+  ];
+
+  sheet.appendRow(row);
+
+  return ContentService.createTextOutput("Success");
+}
+
+</script>
+<!-- Submission Modal -->
+ <div class="modal fade" id="submissionModal" tabindex="-1" aria-labelledby="submissionModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered zoom-in">
+    <div class="modal-content text-center">
+      <div class="modal-body py-4">
+        <div id="modal-icon" class="mb-3"></div>
+        <h5 id="modal-message" class="mb-3 fw-semibold"></h5>
+        <button type="button" class="btn btn-primary" id="modal-ok-btn" data-bs-dismiss="modal">Okay</button>
+      </div>
+    </div>
+  </div>
+</div>
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+<script>
+  let formSubmitted = false;
+
+  document.querySelector("form").addEventListener("submit", function () {
+    formSubmitted = true;
+  });
+
+  document.getElementById('hidden_iframe').addEventListener('load', function () {
+    if (formSubmitted) {
+      showModal("success", "Form submitted successfully!");
+      document.querySelector("form").reset();
+      formSubmitted = false;
+    }
+  });
+
+  function showModal(type, message) {
+    const icon = document.getElementById("modal-icon");
+    const msg = document.getElementById("modal-message");
+    icon.className = ""; // Reset
+    icon.classList.add(type);
+    msg.textContent = message;
+
+    const modal = new bootstrap.Modal(document.getElementById("submissionModal"));
+    modal.show();
+  }
+
+  document.getElementById("modal-ok-btn").addEventListener("click", () => {
+    document.querySelector("form").reset();
+  });
+</script>
+
+</body>
+</html> 
